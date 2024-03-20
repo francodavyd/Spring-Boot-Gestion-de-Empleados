@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bono_sueldo" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+    <style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+    <style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+    <style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+    <style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style mode="Opaque" backcolor="#EEEFF0"/>
+        </conditionalStyle>
+    </style>
+    <style name="Table">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+            <topPen lineWidth="1.0" lineColor="#000000"/>
+            <leftPen lineWidth="1.0" lineColor="#000000"/>
+            <bottomPen lineWidth="1.0" lineColor="#000000"/>
+            <rightPen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style backcolor="#D8D8D8"/>
+        </conditionalStyle>
+    </style>
+    <subDataset name="tableDataset" uuid="f13e6d36-5148-4ecc-bbe3-3035def80980">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+    </subDataset>
+    <parameter name="nombre_empleado" class="java.lang.String"/>
+    <parameter name="cargo" class="java.lang.String"/>
+    <parameter name="ingreso" class="java.lang.String"/>
+    <parameter name="emision" class="java.lang.String"/>
+    <parameter name="dias_trabajados" class="java.lang.Integer"/>
+    <parameter name="horas_diarias" class="java.lang.Integer"/>
+    <parameter name="valor_hora" class="java.lang.Double"/>
+    <parameter name="horas_extra" class="java.lang.Integer"/>
+    <parameter name="valor_extra" class="java.lang.Double"/>
+    <parameter name="total" class="java.lang.Double"/>
+    <parameter name="refrigerio" class="java.lang.Double"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <title>
+        <band height="262" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="120" width="79" height="15" uuid="33274f5d-5b7e-4be2-a2ff-65d452a618ed"/>
+                <text><![CDATA[Dias trabajados:]]></text>
+            </staticText>
+            <line>
+                <reportElement x="0" y="80" width="556" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </line>
+            <staticText>
+                <reportElement x="0" y="140" width="120" height="15" uuid="1d3045ed-03d6-4253-a959-aeeb491b73ca"/>
+                <text><![CDATA[Horas trabajadas por dia:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="160" width="79" height="15" uuid="235bf8b6-1e1e-49c7-b59f-7a46c30b8209"/>
+                <text><![CDATA[Valor por hora:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="180" width="64" height="15" uuid="665f25c2-8663-4951-b699-1ab863bdeb76"/>
+                <text><![CDATA[Horas extras:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="90" y="0" width="190" height="19" uuid="d8a49738-a36b-4f3d-a027-53d534598396"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{nombre_empleado}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="90" y="30" width="39" height="20" uuid="43cf1db2-d9ab-404d-9984-e9244a9045bf"/>
+                <text><![CDATA[Cargo:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="90" y="50" width="90" height="30" uuid="9bf3ed54-c056-4c64-9e12-ab094e5638fd"/>
+                <text><![CDATA[Fecha de ingreso:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="290" y="31" width="90" height="19" uuid="4e6639ef-1172-4cd2-babd-1b91a27ad75a"/>
+                <text><![CDATA[Fecha de emisión:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="290" y="51" width="170" height="30" uuid="ffffed22-0f54-4c39-b705-26004e36c6af"/>
+                <text><![CDATA[Nombre empresa: Example]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="135" y="30" width="100" height="19" uuid="b6cdf379-4654-49a5-9716-f425dbaa785f"/>
+                <textFieldExpression><![CDATA[$P{cargo}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="180" y="50" width="100" height="30" uuid="a167fa60-b4d9-4582-9e9f-142b0db7654d"/>
+                <textFieldExpression><![CDATA[$P{ingreso}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="30" width="100" height="18" uuid="bee8eb57-f9ff-4113-9268-f40d0f9b03ca"/>
+                <textFieldExpression><![CDATA[$P{emision}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="201" width="100" height="30" uuid="0f1e8bac-b240-4510-b9f3-b7784a6b3554"/>
+                <text><![CDATA[Valor por hora extra:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="90" y="120" width="156" height="14" uuid="5fa7fce8-ffed-4660-939c-759717865aa6"/>
+                <textFieldExpression><![CDATA[$P{dias_trabajados} + " Días"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="130" y="139" width="150" height="16" uuid="1c1dfecc-e98a-4df6-8345-8227d3d8ae04"/>
+                <textFieldExpression><![CDATA[$P{horas_diarias}  + "Horas"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="79" y="160" width="100" height="14" uuid="116bafbb-4fb6-428a-9c9c-f88323649204"/>
+                <textFieldExpression><![CDATA[$P{valor_hora} + "$"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="80" y="180" width="150" height="14" uuid="5d401a26-bc33-4eaf-b340-c7e9f584780a"/>
+                <textFieldExpression><![CDATA[$P{horas_extra} + " Horas"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="110" y="200" width="100" height="16" uuid="834b49fe-fd3a-40ba-a275-8e35f840a3ca"/>
+                <textFieldExpression><![CDATA[$P{valor_extra} + "$"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="129" y="220" width="100" height="30" uuid="e0bd39b8-d66f-4a10-a1c2-50df585f43c3"/>
+                <textFieldExpression><![CDATA[$P{refrigerio} + "$"]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="220" width="120" height="30" uuid="7c337453-15ae-4732-ae7f-83af85e15efe"/>
+                <text><![CDATA[Descuento por Refrigerio:]]></text>
+            </staticText>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="20"/>
+    </columnHeader>
+    <detail>
+        <band height="20"/>
+    </detail>
+    <lastPageFooter>
+        <band height="177">
+            <staticText>
+                <reportElement x="280" y="10" width="100" height="30" uuid="4d9ac88a-d771-40b3-9793-826e25b29366"/>
+                <textElement>
+                    <font size="11"/>
+                </textElement>
+                <text><![CDATA[SUELDO TOTAL:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="390" y="10" width="100" height="30" uuid="8298c84e-27fc-4d2a-8f04-ecf60330af95"/>
+                <textElement>
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{total} + "$"]]></textFieldExpression>
+            </textField>
+        </band>
+    </lastPageFooter>
+</jasperReport>
